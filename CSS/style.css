@@ -72,3 +72,49 @@ main {
     height: 100vh;
     background-color: rgb(243, 243, 243);
 }
+
+header,
+main {
+    margin-left: 250px;
+}
+
+@media (max-width: 576px) {
+    main,
+    header {
+        margin-left: 0;
+    }
+}
+
+.btn-fechar {
+    border: #373737 1px solid;
+    border-radius: 100%;
+    padding: 10px;
+}
+
+.container-logo img {
+    width: 60px;
+    border-radius: 10px;
+}
+
+.container-logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    margin-left: 30px;
+}
+
+.container-logo div {
+    width: 140px;
+}
+
+.container-logo h3 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.container-logo p {
+    font-size: 13px;
+    margin: 0;
+}
