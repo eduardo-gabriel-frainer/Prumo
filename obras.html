@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/dataTables.bootstrap5.min.css">
+
+    <link rel="stylesheet" href="CSS/style.css">
+
+    <title>Prumo</title>
+</head>
+
+<body>
+
+    <div>
+        <nav class="d-none d-sm-block">
+            <div class="container-logo">
+                <img src="img/logoQuadrada.png">
+                <div>
+                    <h3>Prumo</h3>
+                    <p>Gestão de Obras</p>
+                </div>
+            </div>
+
+            <hr>
+
+            <div id="links">
+                <a href="/obras.html">
+                    <i data-lucide="house"></i>
+                    Obras
+                </a>
+
+                <a href="/checklist.html">
+                    <i data-lucide="check"></i>
+                    Checklist
+                </a>
+
+                <a href="/horas.html">
+                    <i data-lucide="clock"></i>
+                    Horas
+                </a>
+
+                <a href="#">
+                    <i data-lucide="settings"></i>
+                    Configuração
+                </a>
+            </div>
+        </nav>
+
+        <div>
+            <header>
+                <div class="d-flex gap-2">
+                    <i data-lucide="moon"></i>
+                    <i data-lucide="bell"></i>
+                </div>
+
+                <button class="btn btn-outline-dark d-sm-none" data-bs-toggle="offcanvas" data-bs-target="#menuMobile">
+                    ☰
+                </button>
+            </header>
+        </div>
+
+        <main class="m-10">
+
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h2>Cadastro de Obras</h2>
+                    <p class="text-muted">
+                        Registre as Obras que estão em andamento
+                    </p>
+                </div>
+            </div>
+
+            <div class="card shadow-sm">
+                <div class="card-body">
+
+                    <form id="formObras">
+
+                        <div class="row g-3">
+                            <h3>Informações básicas</h3>
+                            <div class="col-md-12">
+                                <label class="form-label">Nome da obra</label>
+                                <input class="form-control" id="obra">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Cliente</label>
+                                <input class="form-control" id="cliente">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Telefone</label>
+                                <input type="tel" class="form-control" id="telefone" placeholder="(47) 99999-9999">
+                            </div>
+
+                            <hr class="mt-5 border-secondary">
+
+                            <h3>Localização</h3>
+
+                            <div class="col-md-6">
+                                <label class="form-label">CEP</label>
+                                <input class="form-control" id="cep">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Endereco</label>
+                                <input class="form-control" id="endereco">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Cidade</label>
+                                <input class="form-control" id="cidade">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Estado</label>
+                                <input class="form-control" id="estado">
+                            </div>
+                            <div class="col-12 d-flex justify-content-end">
+                                <button type="button" class="btn" id="btnSalvar">
+                                    <i data-lucide="save"></i>
+                                    Salvar Registro
+                                </button>
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+
+            <div class="card shadow-sm mt-4">
+                <div class="card-body">
+
+                    <h5 class="mb-3">Últimos Registros</h5>
+
+                    <div class="table-responsive">
+
+                        <table id="tabelaObras" class="table table-hover">
+
+                            <thead>
+                                <tr>
+                                    <th>Obra</th>
+                                    <th>Cliente</th>
+                                    <th>Telefone</th>
+                                    <th>Endereço</th>
+                                </tr>
+                            </thead>
+
+                        </table>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </main>
+
+    </div>
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="menuMobile">
+
+        <div class="offcanvas-header d-flex justify-content-between">
+            <h5>Prumo</h5>
+            <i data-lucide="circle-x" data-bs-dismiss="offcanvas"></i>
+        </div>
+
+        <div>
+
+            <a href="/obras.html">
+                <i data-lucide="house"></i>
+                Obras
+            </a>
+
+            <a href="/checklist.html">
+                <i data-lucide="check"></i>
+                Checklist
+            </a>
+
+            <a href="/horas.html">
+                <i data-lucide="clock"></i>
+                Horas
+            </a>
+
+            <a href="/configuracao.html">
+                <i data-lucide="settings"></i>
+                Configuração
+            </a>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.8/js/dataTables.bootstrap5.min.js"></script>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+
+        lucide.createIcons();
+
+        const tabela = $("#tabelaObras").DataTable({
+            language: {
+                url: "https://cdn.datatables.net/plug-ins/1.13.8/i18n/pt-BR.json"
+            }
+        });
+
+        document.getElementById("cep").addEventListener("blur", async function () {
+
+            const cep = this.value.replace(/\D/g, "");
+
+            if (cep.length != 8) {
+                return
+            }
+
+            const url = `https://viacep.com.br/ws/${cep}/json/`
+
+            try {
+                const response = await fetch(url)
+                const dados = await response.json();
+
+                if(dados.uf == undefined){
+                    return
+                }
+
+                console.log('Buscando dados do CEP')
+
+                document.getElementById('estado').value = dados.uf;
+                document.getElementById('cidade').value = dados.localidade;
+                document.getElementById('endereco').value = dados.logradouro;
+                
+            } catch (error) {
+                
+            }
+
+
+
+        });
+
+
+        document.getElementById("btnSalvar").addEventListener("click", function () {
+            const obra = document.getElementById("obra").value;
+            const cliente = document.getElementById("cliente").value;
+            const telefone = document.getElementById("telefone").value;
+            const endereco = document.getElementById("endereco").value;
+            const cep = document.getElementById("cep").value;
+            const cidade = document.getElementById("cidade").value;
+            const estado = document.getElementById("estado").value;
+
+            if (!obra || !cliente || !telefone || !endereco || !cep || !cidade || !estado) {
+                alert("Preencha todos os campos.");
+                return;
+            }
+
+            tabela.row.add([obra, cliente, telefone, endereco]).draw();
+
+            document.getElementById("formObras").reset();
+        });
+
+    </script>
+
+</body>
+
+</html>

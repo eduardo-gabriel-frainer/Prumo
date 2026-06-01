@@ -69,6 +69,7 @@ nav div a:hover {
 }
 
 main {
+    padding: 50px;
     height: 100vh;
     background-color: rgb(243, 243, 243);
 }
@@ -117,4 +118,15 @@ main {
 .container-logo p {
     font-size: 13px;
     margin: 0;
+}
+
+#btnSalvar{
+    display: flex;
+    align-items: center;
+    
+    gap: 5px;
+    background-color: #f59e0b;
+    color: #ffffff;
+    font-size: large;
+    width: 200px;
 }
