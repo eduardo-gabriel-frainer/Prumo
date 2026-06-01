@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ObraTrack - Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./CSS/styleLogin.css">
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <main class="login-form-section">
+            <div class="dark-mode-toggle">
+                <i data-lucide="moon"></i>
+            </div>
+
+            <div class="form-wrapper">
+                <div class="logo-container">
+                    <div>
+                        <h1 class="brand-name">Prumo</h1>
+                        <p class="brand-subtitle">Gestão de Obras</p>
+                    </div>
+                </div>
+
+                <div class="welcome-text">
+                    <h2>Bem-vindo de volta</h2>
+                    <p>Entre com suas credenciais para continuar</p>
+                </div>
+
+                <form class="login-form">
+                    <div class="input-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" placeholder="seu@email.com" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="password">Senha</label>
+                        <div class="password-wrapper">
+                            <input type="password" id="password" placeholder="••••••••" required>
+                            <span class="toggle-password">👁️</span>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <label class="remember-me">
+                            <input type="checkbox"> Lembrar-me
+                        </label>
+                        <a href="#" class="forgot-password">Esqueceu a senha?</a>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Entrar</button>
+                </form>
+
+                <p class="signup-text">
+                    Não tem uma conta? <a href="#">Cadastre-se</a>
+                </p>
+            </div>
+        </main>
+
+        <section class="login-banner-section">
+            <div class="banner-content">
+                <div class="banner-circle-icon">
+                    <span class="large-helmet"><img src="/img/logo1.png" alt=""></span>
+                </div>
+                <h2>Gerencie suas obras com eficiência</h2>
+                <p>Controle tarefas, registre horas e acompanhe o progresso de todos os seus projetos em um só lugar.</p>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        lucide.createIcons();
+
+        const darkModeToggle = document.querySelector('.dark-mode-toggle');
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+
+        const loginForm = document.querySelector('.login-form');
+        
+        loginForm.addEventListener('submit', (event) => {
+            event.preventDefault(); 
+            window.location.href = 'index.html'; 
+        });
+    </script>
+</body>
+
+</html>
