@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ObraTrack - Login</title>
+    <title>Prumo - login</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -43,7 +43,9 @@
                         <label for="password">Senha</label>
                         <div class="password-wrapper">
                             <input type="password" id="password" placeholder="••••••••" required>
-                            <span class="toggle-password">👁️</span>
+                            <span class="toggle-password">
+                                <i data-lucide="eye"></i>
+                            </span>
                         </div>
                     </div>
 
@@ -69,7 +71,8 @@
                     <span class="large-helmet"><img src="/img/logo1.png" alt=""></span>
                 </div>
                 <h2>Gerencie suas obras com eficiência</h2>
-                <p>Controle tarefas, registre horas e acompanhe o progresso de todos os seus projetos em um só lugar.</p>
+                <p>Controle tarefas, registre horas e acompanhe o progresso de todos os seus projetos em um só lugar.
+                </p>
             </div>
         </section>
 
@@ -86,10 +89,25 @@
         });
 
         const loginForm = document.querySelector('.login-form');
-        
+
         loginForm.addEventListener('submit', (event) => {
-            event.preventDefault(); 
-            window.location.href = 'index.html'; 
+            event.preventDefault();
+            window.location.href = 'index.html';
+        });
+
+        const passwordInput = document.querySelector('#password');
+        const togglePasswordButton = document.querySelector('.toggle-password');
+
+        togglePasswordButton.addEventListener('click', () => {
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                togglePasswordButton.innerHTML = '<i data-lucide="eye-off"></i>';
+            } else {
+                passwordInput.type = 'password';
+                togglePasswordButton.innerHTML = '<i data-lucide="eye"></i>';
+            }
+
+            lucide.createIcons();
         });
     </script>
 </body>
