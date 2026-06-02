@@ -26,10 +26,15 @@ nav {
     z-index: 2;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
     border-right: #cbcbcb solid 1px;
+    display: flex;
+    flex-direction: column;
 }
 
 #links {
     padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 nav div {
@@ -39,26 +44,36 @@ nav div {
 
 a {
     display: flex;
-    gap: 10px;
-    background-color: white;
-    padding: 20px 20px;
-    margin: 5px 0;
+    align-items: center;
+    gap: 12px;
+    background-color: transparent;
+    padding: 14px 20px;
+    margin: 4px 0;
     border-radius: 8px;
-    color: #373737;
+    color: #64748b;
     text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 600;
-    transition: 0.3s;
+    font-family: 'Inter', Arial, sans-serif;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+a:hover {
+    background-color: #f1f5f9;
+    color: #1e293b;
+}
+
+a.active {
+    background-color: #f59e0b !important;
+    color: white !important;
+}
+
+a.active:hover {
+    background-color: #d97706 !important;
+    color: white !important;
 }
 
 hr {
     width: 100%;
-}
-
-nav div a:hover {
-    background-color: rgb(248, 159, 27);
-    color: white;
-    transform: translateX(5px);
 }
 
 #logo {
@@ -80,6 +95,7 @@ main {
 }
 
 @media (max-width: 576px) {
+
     main,
     header {
         margin-left: 0;
@@ -93,37 +109,42 @@ main {
 }
 
 .container-logo img {
-    width: 60px;
-    border-radius: 10px;
+width: 42px;
+    height: 42px;
+    border-radius: 8px;
+    object-fit: contain;
 }
 
 .container-logo {
-    display: flex;
+display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 10px;
-    margin-top: 15px;
-    margin-left: 30px;
+    gap: 12px;
+    padding: 24px 20px 16px 20px;
 }
 
 .container-logo div {
-    width: 140px;
+  display: flex;
+    flex-direction: column;
 }
 
 .container-logo h3 {
-    font-size: 20px;
+font-size: 19px;
+    font-weight: 700;
+    color: #0f172a;
     margin: 0;
+    line-height: 1.2;
 }
 
 .container-logo p {
-    font-size: 13px;
+font-size: 12px;
+    color: #64748b;
     margin: 0;
 }
 
-#btnSalvar{
+#btnSalvar {
     display: flex;
     align-items: center;
-    
     gap: 5px;
     background-color: #f59e0b;
     color: #ffffff;
