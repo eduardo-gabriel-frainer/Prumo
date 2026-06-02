@@ -82,7 +82,6 @@ body {
     font-size: 0.95rem;
 }
 
-/* Formulário e Inputs */
 .input-group {
     margin-bottom: 20px;
 }
@@ -110,7 +109,6 @@ body {
     border-color: #f59e0b;
 }
 
-/* Input de Senha + Ícone de Olho */
 .password-wrapper {
     position: relative;
     display: flex;
@@ -130,7 +128,6 @@ body {
     opacity: 0.8;
 }
 
-/* Ações Inferiores (Lembrar-me / Esqueci a senha) */
 .form-actions {
     display: flex;
     justify-content: space-between;
@@ -149,7 +146,7 @@ body {
 
 .remember-me input {
     cursor: pointer;
-    accent-color: #f59e0b; /* Deixa o checkbox laranja em navegadores modernos */
+    accent-color: #f59e0b; 
 }
 
 .forgot-password {
@@ -162,7 +159,6 @@ body {
     text-decoration: underline;
 }
 
-/* Botão Entrar */
 .btn-submit {
     width: 100%;
     padding: 14px;
@@ -180,7 +176,6 @@ body {
     background-color: #d97706;
 }
 
-/* Texto de Cadastro */
 .signup-text {
     text-align: center;
     margin-top: 32px;
@@ -198,9 +193,6 @@ body {
     text-decoration: underline;
 }
 
-/* ==========================================
-   3. COLUNA DA DIREITA (Banner Informativo)
-   ========================================== */
 .login-banner-section {
     flex: 1;
     background: radial-gradient(#f59f0b0e 10%, #f59f0b23 80%);
@@ -215,7 +207,6 @@ body {
     max-width: 470px;
 }
 
-/* Círculo do fundo da imagem */
 .banner-circle-icon {
     width: 200px;
     height: 200px;
@@ -227,7 +218,6 @@ body {
     margin: 0 auto 36px auto;
 }
 
-/* Ajuste fino para a imagem logo2.png dentro do círculo */
 .large-helmet {
     display: flex;
     align-items: center;
@@ -256,38 +246,27 @@ body {
     line-height: 1.6;
 }
 
-/* ==========================================
-   4. RESPONSIVIDADE (Telas menores)
-   ========================================== */
 @media (max-width: 950px) {
     .login-banner-section {
-        display: none; /* Esconde o lado amarelo em celulares/tablets */
+        display: none; 
     }
 }
 
-/* ==========================================
-   5. CONFIGURAÇÕES DO MODO ESCURO (DARK MODE)
-   ========================================== */
-
-/* Quando o body tiver a classe .dark-mode, essas regras entram em ação */
 body.dark-mode {
     background-color: #0f172a;
     color: #f8fafc;
 }
 
-/* Fundo do formulário na esquerda */
 body.dark-mode .login-form-section {
     background-color: #0f172a;
 }
 
-/* Títulos e textos principais */
 body.dark-mode .brand-name,
 body.dark-mode .welcome-text h2,
 body.dark-mode .input-group label {
     color: #f8fafc;
 }
 
-/* Textos secundários (subtítulos) */
 body.dark-mode .brand-subtitle,
 body.dark-mode .welcome-text p,
 body.dark-mode .remember-me,
@@ -295,19 +274,16 @@ body.dark-mode .signup-text {
     color: #94a3b8;
 }
 
-/* Customização dos Inputs no modo escuro */
 body.dark-mode .input-group input {
     background-color: #1e293b;
     border-color: #334155;
     color: #f8fafc;
 }
 
-/* Foco do input no modo escuro */
 body.dark-mode .input-group input:focus {
     border-color: #f59e0b;
 }
 
-/* Lado direito (Banner) no modo escuro para não cansar os olhos */
 body.dark-mode .login-banner-section {
     background: radial-gradient(#f59f0b0e 10%, #f59f0b23 80%);
 }
