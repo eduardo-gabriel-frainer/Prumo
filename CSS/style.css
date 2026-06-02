@@ -83,8 +83,7 @@ main {
 }
 
 @media (max-width: 576px) {
-    main,
-    header {
+    main{
         margin-left: 0;
     }
 }
