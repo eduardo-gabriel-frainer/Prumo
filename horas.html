@@ -58,9 +58,7 @@
                     <i data-lucide="bell"></i>
                 </div>
 
-                <button class="btn btn-outline-dark d-sm-none"
-                    data-bs-toggle="offcanvas"
-                    data-bs-target="#menuMobile">
+                <button class="btn btn-outline-dark d-sm-none" data-bs-toggle="offcanvas" data-bs-target="#menuMobile">
                     ☰
                 </button>
             </header>
@@ -126,10 +124,7 @@
 
                             <div class="col-md-3">
                                 <label class="form-label">Intervalo (min)</label>
-                                <input type="number"
-                                    class="form-control"
-                                    id="intervalo"
-                                    placeholder="60">
+                                <input type="number" class="form-control" id="intervalo" placeholder="60">
                             </div>
 
                         </div>
@@ -159,7 +154,7 @@
                                 </tr>
                             </thead>
 
-    
+
                         </table>
 
                     </div>
@@ -240,26 +235,26 @@
         }
 
         document.getElementById("btnSalvar").addEventListener("click", function () {
-                const funcionario = document.getElementById("funcionario").value;
-                const obra = document.getElementById("obra").value;
-                const data = document.getElementById("data").value;
-                const entrada = document.getElementById("entrada").value;
-                const saida = document.getElementById("saida").value;
-                const intervalo = Number(document.getElementById("intervalo").value);
+            const funcionario = document.getElementById("funcionario").value;
+            const obra = document.getElementById("obra").value;
+            const data = document.getElementById("data").value;
+            const entrada = document.getElementById("entrada").value;
+            const saida = document.getElementById("saida").value;
+            const intervalo = Number(document.getElementById("intervalo").value);
 
-                if (!funcionario || !obra || !data || !entrada || !saida) {
-                    alert("Preencha todos os campos.");
-                    return;
-                }
+            if (!funcionario || !obra || !data || !entrada || !saida) {
+                alert("Preencha todos os campos.");
+                return;
+            }
 
-                const dataFormatada = new Date(data).toLocaleDateString("pt-BR");
+            const dataFormatada = new Date(data).toLocaleDateString("pt-BR");
 
-                const total = calcularHoras( entrada, saida, intervalo || 0);
+            const total = calcularHoras(entrada, saida, intervalo || 0);
 
-                tabela.row.add([dataFormatada, funcionario, obra, entrada, saida, total ]).draw();
+            tabela.row.add([dataFormatada, funcionario, obra, entrada, saida, total]).draw();
 
-                document.getElementById("formHoras").reset();
-            });
+            document.getElementById("formHoras").reset();
+        });
 
     </script>
 
