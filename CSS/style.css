@@ -66,6 +66,11 @@ a:hover {
     color: #1e293b;
 }
 
+#a-logo {
+    all: unset;
+    cursor: pointer;
+}
+
 a.active {
     background-color: #f59e0b !important;
     color: white !important;
