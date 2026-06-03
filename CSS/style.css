@@ -88,8 +88,8 @@ hr {
 }
 
 main {
-    padding: 50px;
-    height: 100vh;
+    padding: 50px 150px;
+    min-height: 100vh;
     background-color: rgb(243, 243, 243);
 }
 
@@ -98,7 +98,7 @@ main {
 }
 
 @media (max-width: 576px) {
-    main{
+    main {
         margin-left: 0;
     }
 }
@@ -110,14 +110,14 @@ main {
 }
 
 .container-logo img {
-width: 42px;
+    width: 42px;
     height: 42px;
     border-radius: 8px;
     object-fit: contain;
 }
 
 .container-logo {
-display: flex;
+    display: flex;
     flex-direction: row;
     align-items: center;
     gap: 12px;
@@ -125,12 +125,12 @@ display: flex;
 }
 
 .container-logo div {
-  display: flex;
+    display: flex;
     flex-direction: column;
 }
 
 .container-logo h3 {
-font-size: 19px;
+    font-size: 19px;
     font-weight: 700;
     color: #0f172a;
     margin: 0;
@@ -138,7 +138,7 @@ font-size: 19px;
 }
 
 .container-logo p {
-font-size: 12px;
+    font-size: 12px;
     color: #64748b;
     margin: 0;
 }
