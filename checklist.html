@@ -65,9 +65,21 @@
         </div>
 
         <main class="m-10">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h2>Checklist da Obra</h2>
+                    <p class="text-muted">
+                        Crie seções e itens para acompanhar o andamento da obra.
+                    </p>
+                </div>
 
-         
+                <button class="btn btn-warning" id="btnNovaSecao">
+                    <i data-lucide="plus"></i>
+                    Nova Seção
+                </button>
+            </div>
 
+            <div id="containerSecoes"></div>
         </main>
 
     </div>
@@ -118,61 +130,124 @@
 
         lucide.createIcons();
 
-        const tabela = $("#tabelaObras").DataTable({
-            language: {
-                url: "https://cdn.datatables.net/plug-ins/1.13.8/i18n/pt-BR.json"
-            }
-        });
+        let contadorSecoes = 0;
 
-        document.getElementById("cep").addEventListener("blur", async function () {
+        document.getElementById("btnNovaSecao").addEventListener("click", criarSecao);
 
-            const cep = this.value.replace(/\D/g, "");
+        function criarSecao() {
 
-            if (cep.length != 8) {
-                return
-            }
+            contadorSecoes++;
 
-            const url = `https://viacep.com.br/ws/${cep}/json/`
+            const secaoId = `secao-${contadorSecoes}`;
 
-            try {
-                const response = await fetch(url)
-                const dados = await response.json();
+            const secao = document.createElement("div");
 
-                if(dados.uf == undefined){
-                    return
-                }
+            secao.className = "card shadow-sm secao-card";
 
-                console.log('Buscando dados do CEP')
+            secao.innerHTML = `
+            <div class="card-body">
 
-                document.getElementById('estado').value = dados.uf;
-                document.getElementById('cidade').value = dados.localidade;
-                document.getElementById('endereco').value = dados.logradouro;
+                <div class="secao-header mb-3">
                 
-            } catch (error) {
-                
-            }
+                    <div id="nomeItem">
+                        <input placeholder="Nome da Seção..."></input>
+                    </div>
 
-        });
+                    <button
+                        class="btn btn-outline-warning btnAdicionarItem"
+                        data-secao="${secaoId}">
+                        <i data-lucide="plus"></i>
+                        Novo Item
+                    </button>
+                </div>
 
+                <div id="${secaoId}"></div>
 
-        document.getElementById("btnSalvar").addEventListener("click", function () {
-            const obra = document.getElementById("obra").value;
-            const cliente = document.getElementById("cliente").value;
-            const telefone = document.getElementById("telefone").value;
-            const endereco = document.getElementById("endereco").value;
-            const cep = document.getElementById("cep").value;
-            const cidade = document.getElementById("cidade").value;
-            const estado = document.getElementById("estado").value;
+            </div>
+            `;
 
-            if (!obra || !cliente || !telefone || !endereco || !cep || !cidade || !estado) {
-                alert("Preencha todos os campos.");
-                return;
-            }
+            document
+                .getElementById("containerSecoes")
+                .appendChild(secao);
 
-            tabela.row.add([obra, cliente, telefone, endereco]).draw();
+            lucide.createIcons();
 
-            document.getElementById("formObras").reset();
-        });
+            secao
+                .querySelector(".btnAdicionarItem")
+                .addEventListener("click", function () {
+
+                    adicionarItem(this.dataset.secao);
+
+                });
+        }
+
+        function adicionarItem(secaoId) {
+
+            const grupoRadio = `grupo-${Date.now()}`;
+
+            const item = document.createElement("div");
+
+            item.className = "item-checklist";
+
+            item.innerHTML = `
+            <div class="d-flex  justify-content-between align-items-center">
+
+                <div id="nomeItem">
+                    <input placeholder="Nome do item..."></input>
+                </div>
+
+                <div class="radio-group">
+
+                    <div class="form-check">
+                        <input
+                            class="form-check-input"
+                            type="radio"
+                            name="${grupoRadio}"
+                            value="Sim">
+
+                        <label class="form-check-label">
+                            Sim
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input
+                            class="form-check-input"
+                            type="radio"
+                            name="${grupoRadio}"
+                            value="Não">
+
+                        <label class="form-check-label">
+                            Não
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input
+                            class="form-check-input"
+                            type="radio"
+                            name="${grupoRadio}"
+                            value="N/A">
+
+                        <label class="form-check-label">
+                            N/A
+                        </label>
+                    </div>
+
+                </div>
+            </div>
+             `;
+
+            document
+                .getElementById(secaoId)
+                .appendChild(item);
+        }
+
+        window.onload = function () {
+            criarSecao();
+
+            adicionarItem("secao-1");
+        }
 
     </script>
 
