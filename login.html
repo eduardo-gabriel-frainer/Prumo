@@ -80,38 +80,9 @@
 
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <script>
-        lucide.createIcons();
+    <script src="JS/login.js"></script>
 
-        const darkModeToggle = document.querySelector('.dark-mode-toggle');
-        darkModeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-        });
-
-        const loginForm = document.querySelector('.login-form');
-
-        loginForm.addEventListener('submit', (event) => {
-            event.preventDefault();
-            window.location.href = 'index.html';
-        });
-
-        const passwordInput = document.querySelector('#password');
-        const togglePasswordButton = document.querySelector('.toggle-password');
-
-        togglePasswordButton.addEventListener('click', () => {
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
-                togglePasswordButton.innerHTML = '<i data-lucide="eye-off"></i>';
-            } else {
-                passwordInput.type = 'password';
-                togglePasswordButton.innerHTML = '<i data-lucide="eye"></i>';
-            }
-
-            lucide.createIcons();
-        });
-    </script>
-
-    <script src="darkMode.js"></script>
+    <script src="JS/darkMode.js"></script>
 </body>
 
 </html>
