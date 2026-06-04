@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/styleDarkMode.css">
+    <title>Prumo</title>
+</head>
+
+<body>
+
+    <div>
+        <nav class="d-none d-sm-block">
+            <div class="container-logo">
+                <a id="a-logo" href="/index.html">
+                    <img src="img/logoQuadrada.png">
+                </a>
+                <div>
+                    <h3>Prumo</h3>
+                    <p>Gestão de Obras</p>
+                </div>
+            </div>
+
+            <hr>
+            <div id="links">
+                <a href="/obras.html">
+                    <i data-lucide="house"></i>
+                    Obras
+                </a>
+
+                <a href="/checklist.html">
+                    <i data-lucide="check"></i>
+                    Checklist
+                </a>
+
+                <a href="/horas.html">
+                    <i data-lucide="clock"></i>
+                    Horas
+                </a>
+
+                <a href="">
+                    <i data-lucide="settings"></i>
+                    Configuração
+                </a>
+            </div>
+        </nav>
+
+        <div>
+            <header>
+                <div class="dark-mode-toggle text-secondary">
+                    <i data-lucide="moon"></i>
+                </div>
+
+                <button class="btn btn-outline-dark d-sm-none" data-bs-toggle="offcanvas" data-bs-target="#menuMobile">
+                    ☰
+                </button>
+            </header>
+        </div>
+
+        <main>
+            <h1>Bem-vindo ao Prumo</h1>
+            <p>Centralize a gestão das suas obras em um único lugar.</p>
+        </main>
+    </div>
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="menuMobile">
+
+        <div class="offcanvas-header d-flex justify-content-between">
+            <h5>Prumo</h5>
+            <i data-lucide="circle-x" data-bs-dismiss="offcanvas"></i>
+        </div>
+
+        <div>
+
+            <div>
+
+                <a href="/obras.html">
+                    <i data-lucide="house"></i>
+                    Obras
+                </a>
+
+                <a href="/checklist.html">
+                    <i data-lucide="check"></i>
+                    Checklist
+                </a>
+
+                <a href="/horas.html">
+                    <i data-lucide="clock"></i>
+                    Horas
+                </a>
+
+                <a href="/configuracao.html">
+                    <i data-lucide="settings"></i>
+                    Configuração
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        lucide.createIcons();
+    </script>
+
+    <script src="JS/darkMode.js"></script>
+
+</body>
+
+</html>
