@@ -75,7 +75,7 @@
                         Registre as horas trabalhadas pelos colaboradores.
                     </p>
                 </div>
-                
+
             </div>
 
             <div class="card shadow-sm">
@@ -88,10 +88,8 @@
                             <div class="col-md-6">
                                 <label class="form-label">Funcionário</label>
                                 <select class="form-select" id="funcionario">
-                                    <option value="">Selecione um funcionário</option>
-                                    <option>Ilizeu Langa</option>
-                                    <option>Bequinha</option>
-                                    <option>Nato</option>
+                                    <option value="">Selecione um funcionario</option>
+                                     <option>Ilizeu</option>
                                 </select>
                             </div>
 
@@ -259,6 +257,37 @@
 
             document.getElementById("formHoras").reset();
         });
+
+        async function buscarNomes() {
+            try {
+                const response = await fetch('https://api.api-ninjas.com/v1/babynames?gender=neutral', {
+                    method: 'GET',
+                    headers: {
+                        'X-Api-Key': 'eaY2lynmyl4MrlhCNjI3ZYcekf7ghN9KeZUGSFAU'
+                    }
+                })
+
+                const data = await response.json();
+
+                console.log(data)
+
+                const selectFuncionario = document.getElementById('funcionario')
+
+                data.forEach(nome => {
+                    const option = document.createElement('option');
+
+                    option.value = nome;
+                    option.textContent = nome;
+
+                    selectFuncionario.appendChild(option);
+                });
+
+            } catch (error) {
+                console.log('Não foi possivel buscar os nomes na API')
+            }
+        }
+
+        buscarNomes()
 
     </script>
 
