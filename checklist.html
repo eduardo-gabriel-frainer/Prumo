@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/dataTables.bootstrap5.min.css">
 
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/styleDarkMode.css">
 
     <title>Prumo</title>
 </head>
@@ -55,9 +56,8 @@
 
         <div>
             <header>
-                <div class="d-flex gap-2">
+                <div class="dark-mode-toggle text-secondary">
                     <i data-lucide="moon"></i>
-                    <i data-lucide="bell"></i>
                 </div>
 
                 <button class="btn btn-outline-dark d-sm-none" data-bs-toggle="offcanvas" data-bs-target="#menuMobile">
@@ -152,7 +152,7 @@
                 <div class="secao-header mb-3">
                 
                     <div id="nomeItem" class="d-flex gap-3">
-                        <input placeholder="Nome da Seção..."></input>
+                        <input class="form-control" placeholder="Nome da Seção..."></input>
                         <select class="form-select" id="obra">
                             <option value="">Selecione uma obra</option>
                             <option>Casa do Mazzi</option>
@@ -201,7 +201,7 @@
             <div class="d-flex  justify-content-between align-items-center">
 
                 <div id="nomeItem">
-                    <input placeholder="Nome do item..."></input>
+                    <input class="form-control" placeholder="Nome do item..."></input>
                 </div>
 
                 <div class="radio-group">
@@ -258,6 +258,8 @@
         }
 
     </script>
+
+    <script src="darkMode.js"></script>
 
 </body>
 

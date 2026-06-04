@@ -101,6 +101,7 @@ body {
     border-radius: 6px;
     font-size: 0.95rem;
     background-color: #fff;
+    color: #0f172a;
     outline: none;
     transition: border-color 0.2s, box-shadow 0.2s;
 }
@@ -113,6 +114,11 @@ body {
     position: relative;
     display: flex;
     align-items: center;
+    width: 100%;
+}
+
+.password-wrapper input {
+    padding-right: 45px;
 }
 
 .toggle-password {
@@ -298,4 +304,22 @@ body.dark-mode .banner-content h2 {
 
 body.dark-mode .banner-content p {
     color: #94a3b8;
+}
+
+html body:not(.dark-mode) input:-webkit-autofill,
+html body:not(.dark-mode) input:-webkit-autofill:hover, 
+html body:not(.dark-mode) input:-webkit-autofill:focus,
+html body:not(.dark-mode) input:-webkit-autofill:active {
+    -webkit-text-fill-color: #0f172a !important;
+    -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+html body.dark-mode input:-webkit-autofill,
+html body.dark-mode input:-webkit-autofill:hover, 
+html body.dark-mode input:-webkit-autofill:focus,
+html body.dark-mode input:-webkit-autofill:active {
+    -webkit-text-fill-color: #ffffff !important;
+    -webkit-box-shadow: 0 0 0px 1000px #1e293b inset !important;
+    transition: background-color 5000s ease-in-out 0s;
 }

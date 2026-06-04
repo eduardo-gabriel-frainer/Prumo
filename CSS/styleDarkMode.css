@@ -1,0 +1,193 @@
+html body:not(.dark-mode) {
+    background-color: rgb(243, 243, 243);
+    color: #0f172a;
+}
+
+html body:not(.dark-mode) main .card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+}
+
+html body:not(.dark-mode) main .card h2, 
+html body:not(.dark-mode) main .card h3, 
+html body:not(.dark-mode) main .card h5, 
+html body:not(.dark-mode) main .card .form-label, 
+html body:not(.dark-mode) main .card p {
+    color: #0f172a;
+}
+
+html body:not(.dark-mode) main .form-control, 
+html body:not(.dark-mode) main .form-select {
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    color: #0f172a;
+}
+
+html body:not(.dark-mode) main .form-control::placeholder {
+    color: #94a3b8;
+}
+
+html body.dark-mode {
+    background-color: #0f172a;
+    color: #f8fafc;
+}
+
+html body.dark-mode nav,
+html body.dark-mode header,
+html body.dark-mode main {
+    background-color: #0f172a;
+}
+
+html body.dark-mode nav {
+    border-right-color: #334155;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+html body.dark-mode header {
+    border-bottom-color: #334155;
+}
+
+html body.dark-mode a {
+    color: #cbd5e1;
+}
+
+html body.dark-mode a:hover {
+    background-color: #1e293b;
+    color: #ffffff;
+}
+
+html body.dark-mode a.active {
+    background-color: #f59e0b;
+    color: #ffffff;
+}
+
+html body.dark-mode .container-logo h3 {
+    color: #ffffff;
+}
+
+html body.dark-mode .container-logo p {
+    color: #e2e8f0;
+}
+
+html body.dark-mode main p.text-muted,
+html body.dark-mode main .text-muted {
+    color: #cbd5e1 !important;
+}
+
+html body.dark-mode hr {
+    border-color: #475569;
+    opacity: 0.6;
+}
+
+html body.dark-mode .offcanvas {
+    background-color: #0f172a;
+    color: #f8fafc;
+}
+
+html body.dark-mode .offcanvas-header {
+    border-bottom: 1px solid #334155;
+}
+
+html body.dark-mode main .card {
+    background-color: #151f32;
+    border: 1px solid #1e293b;
+}
+
+html body.dark-mode main .card h2, 
+html body.dark-mode main .card h3, 
+html body.dark-mode main .card h5, 
+html body.dark-mode main .card .form-label, 
+html body.dark-mode main .card p {
+    color: #ffffff;
+}
+
+html body.dark-mode main .item-checklist {
+    background: #334155;
+    color: #f8fafc;
+}
+
+html body.dark-mode main .form-control, 
+html body.dark-mode main .form-select,
+html body.dark-mode main #nomeItem input {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    color: #ffffff;
+}
+
+html body.dark-mode main #nomeItem input {
+    color: #f8fafc;
+}
+
+html body.dark-mode main .form-control:focus, 
+html body.dark-mode main .form-select:focus,
+html body.dark-mode main #nomeItem input:focus {
+    background-color: #1e293b;
+    border-color: #f59e0b;
+    color: #ffffff;
+    box-shadow: 0 0 0 0.25rem rgba(245, 158, 11, 0.25);
+}
+
+html body.dark-mode main .form-control::placeholder {
+    color: #94a3b8;
+    opacity: 1;
+}
+
+html body.dark-mode main table.table {
+    border-color: #334155;
+}
+
+html body.dark-mode main table.table tbody tr td {
+    color: #f8fafc;
+    background-color: #1e293b;
+}
+
+html body.dark-mode main table.table thead tr th {
+    color: #ffffff;
+    background-color: #0f172a;
+}
+
+html body.dark-mode main .table-hover tbody tr:hover td {
+    background-color: #334155;
+    color: #ffffff;
+}
+
+html body.dark-mode main .dataTables_wrapper, 
+html body.dark-mode main .dataTables_info,
+html body.dark-mode main .dataTables_length,
+html body.dark-mode main .dataTables_length label,
+html body.dark-mode main .dataTables_filter,
+html body.dark-mode main .dataTables_filter label,
+html body.dark-mode main .dataTables_wrapper label {
+    color: #e2e8f0;
+}
+
+html body.dark-mode main .dataTables_filter input {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    color: #ffffff;
+}
+
+html body.dark-mode main .pagination .page-item .page-link {
+    background-color: #1e293b;
+    border-color: #334155;
+    color: #cbd5e1;
+}
+
+html body.dark-mode main .pagination .page-item:not(.active) .page-link:hover {
+    background-color: #334155;
+    border-color: #475569;
+    color: #ffffff;
+}
+
+html body.dark-mode main .pagination .page-item.active .page-link {
+    background-color: #f59e0b;
+    border-color: #f59e0b;
+    color: #ffffff;
+}
+
+html body.dark-mode main .pagination .page-item.disabled .page-link {
+    background-color: #151f32;
+    border-color: #1e293b;
+    color: #475569;
+    opacity: 0.6;
+}
