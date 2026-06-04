@@ -9,7 +9,7 @@
 
         loginForm.addEventListener('submit', (event) => {
             event.preventDefault();
-            window.location.href = 'index.html';
+            window.location.href = 'inicio.html';
         });
 
         const passwordInput = document.querySelector('#password');
