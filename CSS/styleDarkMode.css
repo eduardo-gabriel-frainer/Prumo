@@ -191,3 +191,50 @@ html body.dark-mode main .pagination .page-item.disabled .page-link {
     color: #475569;
     opacity: 0.6;
 }
+
+html body.dark-mode main {
+    background-color: #0f172a; 
+}
+
+html body.dark-mode main .section-title-atatalhos {
+    color: #94a3b8;
+}
+
+html body.dark-mode main .header-welcome {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border-color: #334155;
+}
+
+html body.dark-mode main .welcome-title {
+    color: #f8fafc;
+}
+
+html body.dark-mode main .welcome-text {
+    color: #94a3b8;
+}
+
+html body.dark-mode main .card-hover-effect {
+    background-color: #151f32; 
+    border: 1px solid #1e293b; 
+}
+
+html body.dark-mode main .card-hover-effect .card-title {
+    color: #f8fafc;
+}
+
+html body.dark-mode main .card-hover-effect .card-text {
+    color: #94a3b8;
+}
+
+html body.dark-mode main .icon-warning { 
+    background-color: rgba(245, 158, 11, 0.15); 
+    color: #fbbf24; 
+}
+html body.dark-mode main .icon-success { 
+    background-color: rgba(22, 163, 74, 0.15); 
+    color: #4ade80; 
+}
+html body.dark-mode main .icon-info { 
+    background-color: rgba(6, 182, 212, 0.15); 
+    color: #22d3ee; 
+}

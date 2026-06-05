@@ -38,21 +38,23 @@
         });
 
 
-        document.getElementById("btnSalvar").addEventListener("click", function () {
-            const obra = document.getElementById("obra").value;
-            const cliente = document.getElementById("cliente").value;
-            const telefone = document.getElementById("telefone").value;
-            const endereco = document.getElementById("endereco").value;
-            const cep = document.getElementById("cep").value;
-            const cidade = document.getElementById("cidade").value;
-            const estado = document.getElementById("estado").value;
+document.getElementById("btnSalvar").addEventListener("click", function () {
+    const obra = document.getElementById("obra").value;
+    const cliente = document.getElementById("cliente").value;
+    const telefone = document.getElementById("telefone").value;
+    const endereco = document.getElementById("endereco").value;
+    const cep = document.getElementById("cep").value;
+    const cidade = document.getElementById("cidade").value;
+    const estado = document.getElementById("estado").value;
 
-            if (!obra || !cliente || !telefone || !endereco || !cep || !cidade || !estado) {
-                alert("Preencha todos os campos.");
-                return;
-            }
+    if (!obra || !cliente || !telefone || !endereco || !cep || !cidade || !estado) {
+        alert("Preencha todos os campos.");
+        return;
+    }
 
-            tabela.row.add([obra, cliente, telefone, endereco]).draw();
+    tabela.row.add([obra, cliente, telefone, endereco]).draw();
 
-            document.getElementById("formObras").reset();
-        });
+    bootstrap.Toast.getOrCreateInstance(document.getElementById('toastSucesso')).show();
+
+    document.getElementById("formObras").reset();
+});

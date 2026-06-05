@@ -43,7 +43,7 @@ nav {
 }
 
 #links {
-    padding: 20px;
+    padding: 10px 20px 20px 20px; 
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -59,12 +59,13 @@ a {
     align-items: center;
     gap: 12px;
     background-color: transparent;
-    padding: 14px 20px;
+    padding: 16px 20px; 
     margin: 4px 0;
     border-radius: 8px;
     color: #64748b;
     text-decoration: none;
     font-family: 'Inter', Arial, sans-serif;
+    font-size: 15px; 
     font-weight: 500;
     transition: 0.2s;
 }
@@ -91,6 +92,9 @@ a.active:hover {
 
 hr {
     width: 100%;
+    border: 0;
+    height: 1px;
+    background-color: #cbcbcb;
 }
 
 #logo {
@@ -124,8 +128,8 @@ main {
 }
 
 .container-logo img {
-    width: 42px;
-    height: 42px;
+    width: 46px;
+    height: 46px;
     border-radius: 8px;
     object-fit: contain;
 }
@@ -135,7 +139,7 @@ main {
     flex-direction: row;
     align-items: center;
     gap: 12px;
-    padding: 24px 20px 16px 20px;
+    padding: 28px 20px 16px 20px;
 }
 
 .container-logo div {
@@ -144,7 +148,7 @@ main {
 }
 
 .container-logo h3 {
-    font-size: 19px;
+    font-size: 20px;
     font-weight: 700;
     color: #0f172a;
     margin: 0;
@@ -172,7 +176,7 @@ main {
 .secao-card {
     margin-bottom: 20px;
     border: none;
-    border-radius: 12px;
+    border-radius: 7px;
 }
 
 .secao-header {
@@ -183,7 +187,7 @@ main {
 
 .item-checklist {
     background: #e7e7e7;
-    border-radius: 8px;
+    border-radius: 7px;
     padding: 12px;
     margin-bottom: 10px;
     margin-left: 20px;
@@ -200,6 +204,40 @@ main {
 
 #nomeItem input{
     padding: 5px 10px;
-    border-radius: 10px;
+    border-radius: 7px;
     border: #dadada 1px solid;
 }
+
+html body:not(.dark-mode) main .header-welcome {
+    background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+    border-color: #e2e8f0;
+}
+
+html body:not(.dark-mode) main .welcome-title {
+    color: #0f172a;
+}
+
+html body:not(.dark-mode) main .welcome-text {
+    color: #475569;
+}
+
+html body:not(.dark-mode) main .section-title-atatalhos {
+    color: #64748b;
+}
+
+html body:not(.dark-mode) main .card-hover-effect {
+    background-color: #ffffff;
+}
+
+html body:not(.dark-mode) main .card-hover-effect .card-title {
+    color: #0f172a;
+}
+
+html body:not(.dark-mode) main .card-hover-effect .card-text {
+    color: #64748b;
+}
+
+html body:not(.dark-mode) main .icon-warning { background-color: #fef3c7; color: #d97706; }
+html body:not(.dark-mode) main .icon-success { background-color: #dcfce7; color: #15803d; }
+html body:not(.dark-mode) main .icon-info    { background-color: #e0f2fe; color: #0369a1; }
+

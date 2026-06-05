@@ -42,6 +42,8 @@
 
             tabela.row.add([dataFormatada, funcionario, obra, entrada, saida, total]).draw();
 
+            bootstrap.Toast.getOrCreateInstance(document.getElementById('toastSucesso')).show();
+
             document.getElementById("formHoras").reset();
         });
 
