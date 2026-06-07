@@ -52,9 +52,27 @@ document.getElementById("btnSalvar").addEventListener("click", function () {
         return;
     }
 
-    tabela.row.add([obra, cliente, telefone, endereco]).draw();
+    tabela.row.add([
+        obra,
+        cliente,
+        telefone,
+        endereco,
+         `<button class="btn p-0 border-0 text-danger btnExcluir">
+            <i data-lucide="trash"></i>
+        </button>`
+        ]).draw();
 
     bootstrap.Toast.getOrCreateInstance(document.getElementById('toastSucesso')).show();
 
+    
+    lucide.createIcons();
+
+
     document.getElementById("formObras").reset();
+});
+
+$('#tabelaObras').on('click', '.btnExcluir', function () {
+    if (confirm('Deseja remover este registro?')) {
+        tabela.row($(this).closest('tr')).remove().draw();
+    }
 });

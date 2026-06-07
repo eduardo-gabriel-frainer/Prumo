@@ -23,23 +23,37 @@ function criarSecao(isInitial = false) {
                     <option>Marinho Buzzi</option>
                 </select>
             </div>
-            <button
-                class="btn btn-outline-warning btnAdicionarItem"
-                data-secao="${secaoId}">
-                <i data-lucide="plus"></i>
-                Novo Item
-            </button>
+            <div class="d-flex gap-2">
+                <button
+                    class="btn btn-outline-warning btnAdicionarItem"
+                    data-secao="${secaoId}">
+                    <i data-lucide="plus"></i>
+                    Novo Item
+                </button>
+
+                <button class="btn p-0 border-0 text-danger btnRemoverSecao">
+                    <i data-lucide="trash"></i>
+                </button>
+            </div>
         </div>
+
         <div id="${secaoId}"></div>
     </div>
     `;
 
     document.getElementById("containerSecoes").appendChild(secao);
-    lucide.createIcons();
 
     secao.querySelector(".btnAdicionarItem").addEventListener("click", function () {
         adicionarItem(this.dataset.secao, false);
     });
+
+    secao.querySelector(".btnRemoverSecao").addEventListener("click", function () {
+        if (confirm("Deseja remover esta seção?")) {
+            secao.remove();
+        }
+    });
+
+    lucide.createIcons();
 
     if (!isInitial) {
         const toastEl = document.getElementById("toastSucesso");
@@ -59,24 +73,39 @@ function adicionarItem(secaoId, isInitial = false) {
         <div id="nomeItem">
             <input class="form-control" placeholder="Nome do item..."></input>
         </div>
+
         <div class="radio-group">
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="${grupoRadio}" value="Sim">
                 <label class="form-check-label">Sim</label>
             </div>
+
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="${grupoRadio}" value="Não">
                 <label class="form-check-label">Não</label>
             </div>
+
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="${grupoRadio}" value="N/A">
                 <label class="form-check-label">N/A</label>
             </div>
+
+            <button class="btn p-0 border-0 text-danger btnRemoverItem">
+                <i data-lucide="trash"></i>
+            </button>
         </div>
     </div>
     `;
 
     document.getElementById(secaoId).appendChild(item);
+
+    item.querySelector(".btnRemoverItem").addEventListener("click", function () {
+        if (confirm("Deseja remover este item?")) {
+            item.remove();
+        }
+    });
+
+    lucide.createIcons();
 
     if (!isInitial) {
         const toastEl = document.getElementById("toastSucesso");
@@ -87,6 +116,6 @@ function adicionarItem(secaoId, isInitial = false) {
 }
 
 window.onload = function () {
-    criarSecao(true);   
-    adicionarItem("secao-1", true); 
+    criarSecao(true);
+    adicionarItem("secao-1", true);
 };
